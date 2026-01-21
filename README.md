@@ -1,5 +1,5 @@
 # 🚚 Smart Logistics: Supply Chain Delay Prediction & AI Dashboard
-
+![Project Demo](demo.gif)
 ## 📌 Project Overview
 In global logistics, shipping delays cause significant financial loss. This project provides an **end-to-end data science solution** to predict and visualize delivery risks.
 
