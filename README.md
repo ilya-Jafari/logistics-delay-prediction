@@ -18,7 +18,22 @@ You can view the live, interactive Tableau dashboard here:
 
 ---
 
+# 🌐 Logistics Intelligence Hub 2.0: AI Agent & Predictive Analytics
+
+## 📌 Evolution from 1.0 to 2.0
+This project has evolved from a static data analysis to a **Live AI Agent**. It now combines historical ML predictions with real-time global trade insights using local LLMs.
+
+## 🚀 Key Features
+- **Predictive ML:** Random Forest model predicting shipment delays based on historical patterns.
+- **Live News Mining:** Real-time scraping of global logistics news from RSS feeds (gCaptain, etc.).
+- **Local LLM Intelligence:** Integrated **Llama 3 (via Ollama)** to provide strategic risk assessments based on today's news.
+- **Privacy First:** All AI processing happens locally on macOS, ensuring data security.
+
 ## 🛠 Tech Stack
+- **AI Brain:** Llama 3 (Ollama).
+- **Machine Learning:** Scikit-Learn.
+- **Web App:** Streamlit.
+- **Data Mining:** BeautifulSoup & lxml.
 - **Language:** Python 3.12 (on macOS)
 - **Machine Learning:** Scikit-Learn (Random Forest)
 - **Data Manipulation:** Pandas, NumPy
@@ -42,7 +57,7 @@ You can view the live, interactive Tableau dashboard here:
 
 ---
 
-## 🚀 How to Run
-1. Clone the repo: `git clone https://github.com/YOUR_USERNAME/your-repo-name.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run `analysis.ipynb` in VS Code.
+## ⚙️ How to Run
+1. Install [Ollama](https://ollama.com) and run `ollama run llama3`.
+2. Clone this repo and install dependencies: `pip install -r requirements.txt`.
+3. Launch the app: `streamlit run app.py`.

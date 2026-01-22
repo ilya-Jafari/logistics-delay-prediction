@@ -1,5 +1,9 @@
 pandas
 numpy
 scikit-learn
-matplotlib
-seaborn
+joblib
+streamlit
+ollama
+requests
+beautifulsoup4
+lxml
