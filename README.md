@@ -1,5 +1,6 @@
 # 🌐 Logistics Intelligence Hub 2.0 (2026 Edition)
 ### Predictive ML + Real-Time Data Mining + Local LLM Analysis
+![Project Demo](demo.gif)
 
 ![Project Status](https://img.shields.io/badge/Status-Version%202.0-green)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
