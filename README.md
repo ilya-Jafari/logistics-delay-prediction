@@ -22,6 +22,7 @@ The **Logistics Intelligence Hub** is a next-generation decision-support system 
 - **Visualization:** Streamlit, Tableau
 
 ---
+![Logistics Dashboard](dashboard.png)
 
 ## 🗺 The Vision: Roadmap to 3.0 (Scale & Future Growth)
 This project is architected for massive scalability. While version 2.0 is a powerful diagnostic tool, it serves as the foundation for a **Fully Autonomous Logistics Ecosystem**:
