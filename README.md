@@ -1,63 +1,38 @@
-# 🚚 Smart Logistics: Supply Chain Delay Prediction & AI Dashboard
-![Project Demo](demo.gif)
+# 🌐 Logistics Intelligence Hub 2.0 (2026 Edition)
+### Predictive ML + Real-Time Data Mining + Local LLM Analysis
+
+![Project Status](https://img.shields.io/badge/Status-Version%202.0-green)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![AI](https://img.shields.io/badge/AI-Llama%203%20(Ollama)-orange)
+
 ## 📌 Project Overview
-In global logistics, shipping delays cause significant financial loss. This project provides an **end-to-end data science solution** to predict and visualize delivery risks.
-
-I combined **Machine Learning (Python)** with **Business Intelligence (Tableau)** to create a tool that:
-1. Analyzes historical shipping data to find patterns.
-2. Uses a **Random Forest AI model** to predict the probability of future delays.
-3. Visualizes global risk zones in an interactive dashboard.
-
----
----
-## 📊 Interactive Dashboard
-![Dashboard Preview](dashboard.png)
-
-You can view the live, interactive Tableau dashboard here:
-👉 **[https://public.tableau.com/views/Logistik-analysist/Dashboard1?:language=de-DE&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)]
-
----
-
-# 🌐 Logistics Intelligence Hub 2.0: AI Agent & Predictive Analytics
-
-## 📌 Evolution from 1.0 to 2.0
-This project has evolved from a static data analysis to a **Live AI Agent**. It now combines historical ML predictions with real-time global trade insights using local LLMs.
+The **Logistics Intelligence Hub** is a next-generation decision-support system designed to mitigate supply chain risks. Unlike traditional dashboards that rely on static historical data, this platform combines **Machine Learning** with **Live Data Mining** and **Generative AI** to provide actionable insights for global logistics managers in 2026.
 
 ## 🚀 Key Features
-- **Predictive ML:** Random Forest model predicting shipment delays based on historical patterns.
-- **Live News Mining:** Real-time scraping of global logistics news from RSS feeds (gCaptain, etc.).
-- **Local LLM Intelligence:** Integrated **Llama 3 (via Ollama)** to provide strategic risk assessments based on today's news.
-- **Privacy First:** All AI processing happens locally on macOS, ensuring data security.
+- **Predictive Analytics:** Uses a trained Random Forest model to calculate the probability of shipment delays based on historical shipping patterns, payment types, and regional factors.
+- **Real-Time Data Mining:** Automatically scrapes and parses live logistics news from global RSS feeds (e.g., gCaptain, Loadstar) to capture the pulse of the industry.
+- **Local AI Intelligence:** Integrated with **Llama 3 via Ollama** to analyze unstructured news data. It identifies geopolitical risks, port strikes, and maritime threats without sending sensitive data to the cloud.
+- **Interactive UI:** A high-performance Streamlit dashboard that bridges the gap between raw data and executive decision-making.
 
 ## 🛠 Tech Stack
-- **AI Brain:** Llama 3 (Ollama).
-- **Machine Learning:** Scikit-Learn.
-- **Web App:** Streamlit.
-- **Data Mining:** BeautifulSoup & lxml.
-- **Language:** Python 3.12 (on macOS)
-- **Machine Learning:** Scikit-Learn (Random Forest)
-- **Data Manipulation:** Pandas, NumPy
-- **Visualization:** Tableau Public
-- **Environment:** VS Code (Jupyter Notebooks)
+- **Core:** Python 3.10+
+- **Machine Learning:** Scikit-Learn, Pandas, NumPy
+- **Generative AI:** Ollama, Llama 3 (Local LLM)
+- **Data Scraping:** BeautifulSoup4, lxml, Requests
+- **Visualization:** Streamlit, Tableau
 
 ---
 
-## 📈 Key Insights & Results
-- **AI Prediction:** The model assigns a `Delay_Probability` score to every order, helping managers act before a delay happens.
-- **Global Risk Map:** Countries like [Insert a Country with high delay from your map] show higher delay risks.
-- **Product Analysis:** Certain product categories have a significantly higher delay rate than others.
+## 🗺 The Vision: Roadmap to 3.0 (Scale & Future Growth)
+This project is architected for massive scalability. While version 2.0 is a powerful diagnostic tool, it serves as the foundation for a **Fully Autonomous Logistics Ecosystem**:
 
----
+### 1. Multi-Agent Workflows (Autonomous Agents)
+Implementing frameworks like **CrewAI** or **LangGraph** to create a team of AI agents:
+* *The Scout:* 24/7 autonomous web monitoring for specific port disruptions.
+* *The Strategist:* Cross-references news with internal ML predictions to suggest alternative shipping routes.
 
-## 📁 Repository Structure
-- `analysis.ipynb`: The full Python workflow (Cleaning, EDA, ML).
-- `logistics_for_tableau.csv`: The processed dataset used for the dashboard.
-- `requirements.txt`: List of Python libraries needed.
-- `README.md`: Project documentation.
+### 2. Long-Term Memory (Vector Databases)
+Integrating **ChromaDB** or **Pinecone** to store historical disruptions. This allows the AI to learn from the past (e.g., *"This strike in Rotterdam resembles the 2024 crisis, suggesting a 15-day recovery window"*).
 
----
-
-## ⚙️ How to Run
-1. Install [Ollama](https://ollama.com) and run `ollama run llama3`.
-2. Clone this repo and install dependencies: `pip install -r requirements.txt`.
-3. Launch the app: `streamlit run app.py`.
+### 3. Real-Time IoT & Asset Tracking
+Expanding data input from static forms to live **API integrations** with GPS and AIS (Automatic Identification System) to track vessels and trucks in real-time on a global map.
