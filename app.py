@@ -10,7 +10,7 @@ from pm4py.objects.conversion.log import converter as log_converter
 import os
 
 # 1. Initial Configuration & Academic Theme
-st.set_page_config(page_title="TU Dortmund | Logistics Intelligence Hub", layout="wide")
+st.set_page_config(page_title="TU Dortmund | Logistics Intelligence Hub 2.1", layout="wide")
 
 # --- 2. Load ML Assets (Model & Columns) ---
 @st.cache_resource
@@ -20,8 +20,8 @@ def load_assets():
     used during training to ensure feature alignment.
     """
     try:
-        model = joblib.load('logistic_delay_model.pkl')
-        columns = joblib.load('model_columns.pkl')
+        model = joblib.load('models/logistic_delay_model.pkl')
+        columns = joblib.load('models/model_columns.pkl')
         return model, columns
     except Exception as e:
         st.error(f"❌ Error loading model assets: {e}")
@@ -109,20 +109,10 @@ def generate_pm4py_map():
     
     # Discover and save DFG
     dfg, start, end = pm4py.discover_directly_follows_graph(df)
-    pm4py.save_vis_dfg(dfg, start, end, "process_map.png")
-    return "process_map.png"
+    pm4py.save_vis_dfg(dfg, start, end, "assets/process_map.png")
+    return "assets/process_map.png"
 
 # --- 4. User Interface (Streamlit) ---
-
-# Sidebar: Academic Context
-st.sidebar.image("https://www.tu-dortmund.de/typo3conf/ext/tu_dortmund_design/Resources/Public/Images/tu-logo.svg", width=180)
-st.sidebar.markdown("### 🎓 Research Context")
-st.sidebar.info("""
-**Project:** Generative Process Analytics  
-**Course:** Business Process Management  
-**Supervision:** Prof. Dr. Janiesch  
-**Technical Base:** Data-Driven Robustness (inspired by work with Prof. Peitz)
-""")
 
 # Main Title
 st.title("🌐 Logistics Intelligence Hub 2.0")
@@ -231,4 +221,4 @@ with tab2:
 
 # Footer
 st.divider()
-st.markdown("<p style='text-align: center; color: grey;'>TU Dortmund | Faculty of Business and Economics | Ilya Jafari 2026</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: grey;'>TU Dortmund | Faculty of CS | Ilya Jafari 2026</p>", unsafe_allow_html=True)
