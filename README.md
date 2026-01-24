@@ -1,6 +1,6 @@
 # 🌐 Logistics Intelligence Hub 2.0 (2026 Edition)
 ### Predictive ML + Real-Time Data Mining + Local LLM Analysis
-![Project Demo](demo.gif)
+![Project Demo](assets/demo.gifdemo.gif)
 
 ![Project Status](https://img.shields.io/badge/Status-Version%202.0-green)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -23,7 +23,7 @@ The **Logistics Intelligence Hub** is a next-generation decision-support system 
 - **Visualization:** Streamlit, Tableau
 
 ---
-![Logistics Dashboard](dashboard.png)
+![Logistics Dashboard](assets/dashboard.pngdashboard.png)
 
 ## 🗺 The Vision: Roadmap to 3.0 (Scale & Future Growth)
 This project is architected for massive scalability. While version 2.0 is a powerful diagnostic tool, it serves as the foundation for a **Fully Autonomous Logistics Ecosystem**:
