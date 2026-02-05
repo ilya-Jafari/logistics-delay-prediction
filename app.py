@@ -12,7 +12,7 @@ import os
 # 1. Initial Configuration & Academic Theme
 st.set_page_config(page_title="TU Dortmund | Logistics Intelligence Hub 2.1", layout="wide")
 
-# --- 2. Load ML Assets (Model & Columns) ---
+# 2. Load ML Assets (Model & Columns) 
 @st.cache_resource
 def load_assets():
     """
@@ -43,7 +43,6 @@ def predict_delay_probability(shipping_mode, region):
         input_data = pd.DataFrame(0, index=[0], columns=model_columns)
         
         # Construct exact column names matching the training phase
-        # Based on your provided list: 'Shipping Mode_...' and 'Order Region_...'
         mode_col = f"Shipping Mode_{shipping_mode}"
         region_col = f"Order Region_{region}"
         
@@ -66,7 +65,7 @@ def predict_delay_probability(shipping_mode, region):
         return round(float(probability) * 100, 2)
     return 0.0
 
-# --- 3. Auxiliary Functions (News & Process Mining) ---
+# 3. Auxiliary Functions (News & Process Mining) 
 
 def get_live_logistics_news():
     """
@@ -112,16 +111,15 @@ def generate_pm4py_map():
     pm4py.save_vis_dfg(dfg, start, end, "assets/process_map.png")
     return "assets/process_map.png"
 
-# --- 4. User Interface (Streamlit) ---
+# 4. User Interface (Streamlit) 
 
-# Main Title
 st.title("🌐 Logistics Intelligence Hub 2.0")
 st.markdown("---")
 
 # Tabs for separate functional layers
 tab1, tab2 = st.tabs(["📊 ML Delay Prediction", "🧠 Strategic BPM Analysis"])
 
-# --- TAB 1: Machine Learning Layer ---
+# --- TAB 1: Machine Learning Layer 
 with tab1:
     col_input, col_viz = st.columns([1, 1.2], gap="large")
     
@@ -135,7 +133,7 @@ with tab1:
         # Using a subset of your actual columns for the demo
         region_list = [
             "Western Europe", "Southeast Asia", "South Asia", 
-            "Central Asia", "Eastern Europe", "West of USA ", # Note: Maintained the space as per your list
+            "Central Asia", "Eastern Europe", "West of USA ", # Note: Maintained the space as per list
             "South America", "Oceania"
         ]
         dest_region = st.selectbox("Destination Region", region_list)
