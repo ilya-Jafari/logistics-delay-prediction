@@ -1,6 +1,5 @@
 import ollama
 
-# Simple function to ask Llama 3 for a logistics insight
 def analyze_logistics_risk(delay_prob, region, product):
     prompt = f"""
     As a professional logistics consultant, analyze this scenario:
@@ -19,8 +18,7 @@ def analyze_logistics_risk(delay_prob, region, product):
     
     return response['message']['content']
 
-# Example usage
-risk_score = 0.78  # 78% risk from our previous model
+risk_score = 0.78  # 78% risk from the previous model
 target_region = "Southeast Asia"
 item = "Smartphones"
 
