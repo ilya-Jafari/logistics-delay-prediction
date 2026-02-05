@@ -1,22 +1,17 @@
-# -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 
 def test_fetch_rss():
     print("🌐 Connecting to gCaptain Logistics RSS Feed...")
-    # RSS ها ساختار بسیار پایداری دارند و بلاک نمی‌شوند
     url = "https://gcaptain.com/feed/" 
     headers = {'User-Agent': 'Mozilla/5.0'}
     
     try:
         response = requests.get(url, headers=headers, timeout=15)
-        # برای RSS از فرمت xml استفاده می‌کنیم
         soup = BeautifulSoup(response.content, 'xml')
         
-        # در RSS تیترها همیشه داخل تگ <title> هستند
         headlines = [item.text.strip() for item in soup.find_all('title')]
         
-        # تیتر اول معمولاً نام خود سایت است، از دومی شروع می‌کنیم
         actual_news = headlines[1:6] 
         
         if not actual_news:
