@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 import ollama
 
-# لیست خبرهایی که همین الان استخراج کردی
 live_headlines = [
     "FMC Commissioners Confirm Trump Administration Is Closing Longstanding Harbor Maintenance Tax Loophole",
     "New Trade Map Takes Shape in Davos as World Adjusts to Trump Tariffs",
@@ -12,7 +10,6 @@ live_headlines = [
 def final_risk_report(news):
     print("🧠 Llama 3 is processing live 2026 trade data...")
     
-    # طراحی یک پرامپت حرفه‌ای برای تحلیل بیزینسی
     prompt = f"""
     You are a Senior Supply Chain Risk Analyst. 
     Analyze these 2026 headlines:
