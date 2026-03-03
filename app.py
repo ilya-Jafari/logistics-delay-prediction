@@ -224,8 +224,9 @@ with tab2:
             with col_report:
                 st.subheader("AI Strategic Advisory")
                 st.markdown("#### 📰 Live Context")
-                for n in news:
-                    st.markdown(f"- *{n}*")
+                news_list = news.split(" | ") if isinstance(news, str) else news
+                for n in news_list:
+                    st.markdown(f"- *{n.strip()}*")
                 
                 st.divider()
                 st.markdown("#### 🧠 Llama 3 Analysis")
