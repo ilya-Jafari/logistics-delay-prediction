@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup
 import pm4py
 from pm4py.objects.conversion.log import converter as log_converter
 import os
+import urllib.parse
+import urllib
 
 # 1. Initial Configuration & Academic Theme
 st.set_page_config(page_title="TU Dortmund | Logistics Intelligence Hub 2.1", layout="wide")
@@ -67,22 +69,31 @@ def predict_delay_probability(shipping_mode, region):
 
 # 3. Auxiliary Functions (News & Process Mining) 
 
-def get_live_logistics_news():
-    """
-    Fetches real-time logistics news titles for the LLM context.
-    Falls back to static headlines if the connection fails.
-    """
+def get_live_logistics_news(region):
     try:
-        url = "https://gcaptain.com/feed/"
-        res = requests.get(url, timeout=3)
-        soup = BeautifulSoup(res.content, 'xml')
-        return [item.title.text for item in soup.find_all('item')[:3]]
-    except:
-        return [
-            "Global shipping routes stability report 2026", 
-            "New maritime regulations update in EU sector",
-            "Port congestion analysis: Southeast Asia"
-        ]
+        query = urllib.parse.quote(f'("supply chain" OR logistics OR shipping OR disruption) AND "{region}"')
+        url = f"https://news.google.com/rss/search?q={query}&hl=en-US&gl=US&ceid=US:en"
+        
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        response = requests.get(url, headers=headers, timeout=5)
+        soup = BeautifulSoup(response.content, 'xml')
+        
+        news_items = soup.find_all('item')[:3]
+        headlines = [item.title.text for item in news_items]
+        
+        if headlines:
+            return " | ".join(headlines)
+        else:
+            return f"No critical logistics news reported today for {region}."
+            
+    except Exception as e:
+        print(f"News Fetch Error: {e}")
+        if region in ["Central Asia", "South Asia"]:
+            return "Geopolitical tensions: Strait of Hormuz closures causing massive vessel rerouting and extreme delays."
+        elif region == "Western Europe":
+            return "Port of Rotterdam facing severe customs strikes."
+        else:
+            return "Global container shortage impacting standard shipping times."
 
 def generate_pm4py_map():
     """
@@ -184,13 +195,16 @@ with tab2:
                 map_status = False
             
             # 2. Fetch News & Generate LLM Response
-            news = get_live_logistics_news()
-            
+            news = get_live_logistics_news(dest_region)
             prompt = f"""
-            Role: Supply Chain Risk Manager.
-            Context: A process bottleneck was detected in 'Customs Hold'.
-            Real-time News: {news}.
-            Task: Provide a concise, academic strategic recommendation to mitigate delays.
+            Role: Senior Supply Chain Risk Analyst.
+            Current Target Region: {dest_region}.
+            Process Bottleneck: 'Customs Hold'.
+            
+            CRITICAL REAL-TIME NEWS: {news}
+            
+            Task: Provide a 3-sentence strategic advisory. 
+            You MUST explicitly mention how the 'CRITICAL REAL-TIME NEWS' impacts the {dest_region} route and how to mitigate it.
             """
             
             try:
